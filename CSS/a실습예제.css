@@ -1,0 +1,16 @@
+.google{
+  width: 250px;
+  border: 2px solid blue;
+  border-radius: 20px;
+  margin: 0px auto;
+  padding: 40px;
+}
+
+.naver{
+  width: 270px;
+  border: 2px solid green;
+  border-radius: 20px;
+  margin: 0px auto;
+  padding: 50px;
+  text-align: center;
+}
