@@ -93,3 +93,23 @@ body {
     1. cover : 내용이 비율을 유지하면서 정의된 가로 x 세로 사이즈를 가득 채울 때 까지 확대된다.
     2. contain : 내용이 비율을 유지하면서 정의된 가로 x 세로 값 안에서 최대한으로 확대된다. */
 }
+
+.contact-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+} 
+
+.contact-list h3 {
+  margin-right: 40px;
+  color: #fff;
+}
+
+.contact-item {
+  padding-right: 20px;
+}
+
+.contact-item:last-child {
+  padding-right: 0;
+}
