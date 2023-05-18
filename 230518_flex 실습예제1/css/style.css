@@ -1,0 +1,22 @@
+
+.wrapper {
+  background-color: #000;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.gnb-list {
+  display: flex;
+  justify-content: right;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+}
