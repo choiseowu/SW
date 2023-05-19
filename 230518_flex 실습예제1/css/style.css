@@ -152,3 +152,21 @@ nav {
 .post-box-item p {
   margin-top: 30px;
 }
+
+footer nav {
+  margin-top: 100px;
+}
+
+.ftr-item {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ftr-item a {
+  color: #fff;
+}
+
+.contact a {
+  color: #fff;
+}
