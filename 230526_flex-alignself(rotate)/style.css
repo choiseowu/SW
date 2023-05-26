@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* vh : viewport height */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 500px;
+  height: 500px;
+  border: 10px solid darkblue;
+}
+
+.wrapper:hover .box {
+  transform: rotate(45deg);
+}
+
+.wrapper:hover .red {
+  border-color:  red;
+}
+
+.wrapper:hover .yellow {
+  border-color:  yellow;
+}
+
+.wrapper:hover .green {
+  border-color:  green;
+}
+
+/* red에 hover시 .green 박스 크기가 커지게 */
+.red:hover .green {
+  transform: scale(1.5);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #000;
+  transition: transform 500ms;
+}
+
+.red {
+  align-self: start;
+  background-color: red;
+}
+
+.yellow {
+  align-self: center;
+  background-color: yellow;
+}
+
+.green {
+  align-self: end;
+  background-color: green;
+}
+
