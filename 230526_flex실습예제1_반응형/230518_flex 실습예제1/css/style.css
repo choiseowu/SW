@@ -207,5 +207,31 @@ footer nav {
 }
 
 @media screen and(max-width : 768px){
-  
+  .logo img {
+    width: 30px;
+  }
+
+  .gnb-list {
+    width: 200px;
+  }
+
+  .background {
+    height: 300px;
+  }
+
+  .back-txt {
+    height: 300px;
+  }
+
+  .back-title {
+    font-size: 20px;
+  }
+
+  .back-content {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    padding: 8px 16px;
+  }
 }
