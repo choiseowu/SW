@@ -32,7 +32,7 @@ body {
 }
 
 /* red에 hover시 .green 박스 크기가 커지게 */
-.red:hover .green {
+.red:hover~ .green {
   transform: scale(1.5);
 }
 
