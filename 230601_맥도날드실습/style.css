@@ -58,6 +58,8 @@ nav {
 .lnb-wrapper {
   position: sticky;
   top: 0;
+  z-index: 10;
+  /* 사진이 앞으로 덮을때 */
 }
 
 .lnb-list {
@@ -75,3 +77,73 @@ nav {
   color: #fff;
   padding: 0 20px;
 }
+
+.lnb-item a:hover {
+  font-weight: bold;
+}
+
+.background {
+  height: 600px;
+  background-image: url('./images/back.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.food-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* flex 정렬시 자리가 차면 밑으로 내려오게 하는것 */
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.food-box-list {
+  display: flex;
+  margin-top: 30px;
+}
+
+.food-box-list:first-child {
+  margin-top: 0;
+}
+
+.food-box-item {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #e1e1e1;
+  overflow: hidden;
+  /* box-radius 박스를 깎았는데 이미지가 덮어서 숨기고 싶을 떄*/
+}
+
+.food-box-item:last-child {
+  margin-right: 0;
+}
+
+.food-box-item a {
+  transition: opacity 300ms ease-in-out;
+}
+
+.food-box-item a:hover {
+  opacity: 0.7;
+  /* 호버 시 화면이 흐려짐 */
+}
+
+.food-box-item img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  /* 화면 안깨지면서 내가 원하느 사이즈만큼 확대 */
+}
+
+.food-box-txt {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  font-weight: bold;
+}
+
