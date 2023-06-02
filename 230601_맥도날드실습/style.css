@@ -55,3 +55,23 @@ nav {
   color: red;
 }
 
+.lnb-wrapper {
+  position: sticky;
+  top: 0;
+}
+
+.lnb-list {
+  display: flex;
+  background-color: rgb(235,27,27) ;
+  padding: 20px 0;
+  border-top: 3px solid rgb(255,213,23);
+}
+
+.lnb-item:first-child {
+  margin-left: 20px;
+}
+
+.lnb-item a {
+  color: #fff;
+  padding: 0 20px;
+}
