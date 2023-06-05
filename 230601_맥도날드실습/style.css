@@ -191,6 +191,12 @@ footer {
   margin-right: 40px;
 }
 
+/* inline tag에 margin, padding이 적용되지 않을 때 display 속성을 바꾼다. */
+.mac-link-item a {
+  display: inline-block;
+  padding: 5px 0;
+}
+
 .mac-link-item:first-child a {
   color: rgb(255,213,23);
 }
@@ -202,3 +208,43 @@ footer {
   그 여백을 지정한 비율대로 차지하게 할 수 있는 속성이다.  */
 }
 
+.mac-inf-list li {
+  padding: 5px 0;
+}
+
+.mac-icon-list {
+  display: flex;
+  align-items: center;
+}
+
+.mac-icon-list li {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color 300ms ease-in-out;
+}
+
+.mac-icon-list li:hover {
+  background-color: rgb(235,27,27);
+}
+
+.mac-icon-list li:hover i {
+  color: #fff;
+}
+
+.mac-icon-list li:last-child {
+  margin-right: 0;
+}
+
+.mac-icon-list i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 26px;
+  color: rgb(235,27,27);
+  transition: color 300ms ease-in-out;
+}
