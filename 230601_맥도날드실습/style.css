@@ -336,7 +336,7 @@ footer {
     margin: 20px auto 0 auto;
   }
   
-  .food-box-item:first-child {
+  .food-box > .food-box-list:first-child > .food-box-item:first-child {
     margin-top: 0;
   }
 
@@ -394,6 +394,7 @@ footer {
     height: 100vh;
     padding: 32px 20px;
     background-color: #fff;
+    transform: translateX(-200px);
   }
 
   .side-menu-item a {
@@ -416,6 +417,5 @@ footer {
     /* UI Animation 효과를 주고 싶다면 visibility를 사용!  */
     visibility: hidden;
     background-color: rgba(63, 65, 80, .5);
-    transform: translateX(-200px);
   }
 }
