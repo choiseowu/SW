@@ -395,6 +395,11 @@ footer {
     padding: 32px 20px;
     background-color: #fff;
     transform: translateX(-200px);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .sidebar.is-active {
+    transform: translateX(0);
   }
 
   .side-menu-item a {
@@ -416,6 +421,14 @@ footer {
     /* display : none transition이 먹지 않는다. */
     /* UI Animation 효과를 주고 싶다면 visibility를 사용!  */
     visibility: hidden;
+    opacity: 0;
+    /* opacity: 투명도 */
     background-color: rgba(63, 65, 80, .5);
+    transition: all 300ms ease-in-out;
+  }
+
+  .overlay.is-active {
+    visibility: visible;
+    opacity: 1;
   }
 }
