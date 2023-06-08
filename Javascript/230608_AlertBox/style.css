@@ -1,0 +1,12 @@
+.alert-box {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: skyblue;
+  color: #fff;
+  box-sizing: border-box;
+}
+
