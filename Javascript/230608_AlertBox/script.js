@@ -6,4 +6,8 @@ function closeAlert(){
   document.getElementById('alert').style.display = 'none';
 }
 
+// document.getElementById('close-btn').addEventListener('click', function(){
+//   document.getElementById('alert').style.display = 'none';
+// })
+
 // document.getElementById('close-btn').addEventListener('click', closeAlert);
