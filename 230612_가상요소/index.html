@@ -7,9 +7,12 @@
   <meta name="keywords" content="CSS, 가상 요소">
   <meta name="description" content="CSS의 가상 요소를 이용하여 반복적으로 나타나는 가상의 요소를 만들 수 있다.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div id="box1">
+    hello world! hello world! hello world!
+  </div>
   <p class="apple">안녕하세요.</p>
   <p class="apple">반갑습니다.</p>
   <p class="apple">Hello world!</p>
@@ -40,5 +43,18 @@
     </div>
   </div>
 
+  <script>
+    // 목표 : x자 버튼을 눌렀을 때 모달이 사라졌으면 좋겠다.
+    // 1. #modalcl 클릭 눌렀을 때
+    // 2. #modal 의 style 중 display 라는 스타일의 값을 none 으로 바꾼다.
+    document.getElementById('modalcl').onclick = function(){
+      document.getElementById('modal').style.display = 'none';
+    };
+
+    // $('#modalcl').click(function(){
+    //   $('modal').hide();
+    // });
+
+  </script>
 </body>
 </html>
