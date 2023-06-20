@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(180, 30%, 90%);
+  /* hsl - hue, saturation, lightness */
+}
+
+.site-header {
+  width: 800px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 1px 3px rgb(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.site-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header nav ul {
+  display: flex;
+  /* gap: 1rem; 간격을 조정해주는 속성 */
+  list-style: none;
+}
+
+.site-header nav ul li {
+  display: inline-flex;
+  padding: 1rem;
+  cursor: pointer;
+  /* 사용자가 내용을 선택할 수 없도록 만드는 기능 */
+  user-select: none;
+}
+
+.site-header nav ul li.active {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
