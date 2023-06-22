@@ -56,7 +56,10 @@ html,body {
   content: '';
 }
 
-#pointer #bubble {
+#app .bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: block;
   width: var(--size);
   height: var(--size);
@@ -65,9 +68,9 @@ html,body {
   opacity: 0;
 }
 
-#pointer:active #bubble {
-  opacity: 0;
-  animation: bubble 1s ease-in-out forwards;
+#app .bubble.active {
+  opacity: 1;
+  animation: bubble 300ms ease-in-out forwards;
 }
 
 @keyframes bubble {
@@ -75,8 +78,11 @@ html,body {
     opacity: 0;
     transform: scale(0);
   }
-  100%{
+  50% {
     opacity: 1;
-    transform: scale(1.2);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(2);
   }
 }
