@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px hsl(192, 60%, 59%);
+    overflow: hidden;
+    &.active{
+      box-shadow: 0 0 0 3px hsl(192, 60%, 30%);
+      .list__content {
+        display: flex;
+      }
+      .list__button .icon {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    .icon {
+      transform: rotate(180deg);
+    }
+    &:active {
+      background-color: hsl(192, 45%, 81%);
+      .list__content {
+        display: flex;
+      }
+    }
+  }
+  &__content {
+    display: none;
+    padding: 1rem;
+  }
+}
