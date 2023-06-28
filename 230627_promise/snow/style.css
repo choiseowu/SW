@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(220, 60%, 15%);
+}
+
+#wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.snow {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  /* animation: snowfall 5s infinite forwards linear; */
+  animation-name: snowfall;
+  /* 시간 */
+  animation-duration: 5s;
+  /* 영원히  */
+  animation-iteration-count: infinite;
+  /* 방향 (정주행) */
+  animation-fill-mode: forwards;
+  /* 일직선으로 내리기 */
+  animation-timing-function: linear;
+  /* animation-delay */
+}
+
+@keyframes snowfall {
+  0% {
+    top:-10px;
+  }
+  100% {
+    top:100%;
+  }
+}
