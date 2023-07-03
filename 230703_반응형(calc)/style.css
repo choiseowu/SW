@@ -36,7 +36,13 @@ a {
   padding: 10px;
   background-color: #fff;
   border-radius: 7px;
-  box-shadow: 0 8px 12px rgb(0, 0, 0, 0.3);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 400ms ease-in-out;
+}
+
+.menu_box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 .img-box {
@@ -51,4 +57,30 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: blur(2px);
+  transition: filter 400ms ease-in-out;
+}
+
+.menu_box:hover .img-box img {
+  filter: blur(0);
+}
+
+.menu_title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.menu_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.date,
+.count {
+  font-size: 14px;
+  color: #666;
 }
