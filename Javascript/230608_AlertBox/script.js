@@ -1,13 +1,6 @@
-document.getElementById('open-btn').addEventListener('click', function(){
-  document.getElementById('alert').style.display = 'flex';
-})
+// 함수를 하나로 만들고 가변적인 값을 매개변수로 받을 수 있게 구멍을 만들어준다.
 
-function closeAlert(){
-  document.getElementById('alert').style.display = 'none';
+function openNclose(매개변수){
+  document.getElementById('alert').style.display = 매개변수;
 }
 
-// document.getElementById('close-btn').addEventListener('click', function(){
-//   document.getElementById('alert').style.display = 'none';
-// })
-
-// document.getElementById('close-btn').addEventListener('click', closeAlert);
