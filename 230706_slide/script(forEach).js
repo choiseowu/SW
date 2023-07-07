@@ -19,6 +19,6 @@ buttons.forEach((btn,index) => {
   let slideList = document.querySelector('.slide-list');
   let xValue = -index * 100 + 'vw';
   // slideList.style.transform = 'translateX(' + xValue + ')'
-  
+  slideList.style.transform = `translateX(${xValue})`;
  })
 })
