@@ -21,6 +21,7 @@ gnbItems.forEach(function(item){
     subMenu.classList.add('active');
     // gnb-menu-item a 태그에 on class 추가시 메인메뉴 컬러 유지 
     this.querySelector('a').classList.add('on');
+    this.querySelector('span').classList.add('is-active');
   })
 
   item.addEventListener('mouseleave', function(){
@@ -28,5 +29,6 @@ gnbItems.forEach(function(item){
     subMenu.classList.remove('active');
     // gnb-menu-item a 태그에 on class 메인메뉴 컬러 유지 제거 
     this.querySelector('a').classList.remove('on');
+    this.querySelector('span').classList.remove('is-active');
   })
 })
