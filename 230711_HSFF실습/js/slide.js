@@ -12,5 +12,14 @@ buttons.forEach(function(button, index){
     // translateX(-100vw)
     // slideList.style.transform = 'translateX(' + translateValue +')'
     slideList.style.transform = `translateX(${translateValue})`
+
+
+    // buttons라는 배열 안에 모든 요소한테 active class remo
+    buttons.forEach(function(otherBtn){
+      otherBtn.classList.remove('active');
+    })
+
+    // 클릭된 요소한테만 active class add 
+    button.classList.add('active');
   })
 })
