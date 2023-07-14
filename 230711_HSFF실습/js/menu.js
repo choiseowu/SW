@@ -17,6 +17,16 @@ gnbItems.forEach(function(item){
   let subMenu = item.querySelector('.sub');
   
   item.addEventListener('mouseover', function(){
+    // sub 메뉴가 보이게 max-height : 265px
     subMenu.classList.add('active');
+    // gnb-menu-item a 태그에 on class 추가시 메인메뉴 컬러 유지 
+    this.querySelector('a').classList.add('on');
+  })
+
+  item.addEventListener('mouseleave', function(){
+    // sub 메뉴가 보이지 않게 max-height : 0
+    subMenu.classList.remove('active');
+    // gnb-menu-item a 태그에 on class 메인메뉴 컬러 유지 제거 
+    this.querySelector('a').classList.remove('on');
   })
 })
