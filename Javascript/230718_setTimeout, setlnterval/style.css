@@ -2,3 +2,7 @@
   padding: 20px;
   background-color: rgb(185, 238, 131);
 }
+
+.count.is-active {
+  display: none;
+}
