@@ -18,6 +18,14 @@ button {
   background-color: transparent;
 }
 
+.visually-hidden{
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -32,7 +40,7 @@ header nav {
 .gnb-logo {
   display: flex;
   font-size: 30px;
-  color: #000;
+  color: pink;
 }
 
 .gnb-logo img {
@@ -42,6 +50,9 @@ header nav {
 }
 
 .gnb-search { 
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
   display: block;
   width: 500px;  
 }
@@ -54,10 +65,60 @@ header nav {
   border-radius: 5px;
 }
 
+.overlay {
+  position: fixed;
+  top: 20px;
+  left: 100vw;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, .5);
+  transition: all 500ms ease-in-out;
+  z-index: 999;
+}
+
+.overlay.is-open {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.login-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 500px;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: pink;
+}
+
+.login-box img {
+  width: 300px;
+}
+
+.overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.open-btn {
+  color: pink;
+  margin-right: 50px;
+  font-size: 26px;
+}
+
+.gnb-list-login {
+  display: none;
+}
+
 .gnb-list {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-left: 80%;
 }
 
 .gnb-list li {
@@ -66,13 +127,13 @@ header nav {
 
 .gnb-item i {
   margin-left: 10px;
-  color: #fff;
   font-size: 24px;
+  color: pink;
 }
 
 .gnb-item i:last-child {
   margin-left: 0;
-}
+} 
 
 .slide-wrapper {
   width: 100vw;
@@ -137,7 +198,7 @@ header nav {
   background-color: #3d3d3d;
 }
 
-.play-list {
+.play-list-btn {
   position: absolute;
   top: 77%;
   right: 55%;
@@ -150,5 +211,3 @@ header nav {
 .play-list i {
   cursor: pointer;
 }
-
-

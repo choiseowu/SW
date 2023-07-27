@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>대전의 온도</title>
+  <title>대전의온도</title>
   <link rel="stylesheet" href="./style.css">
   <!-- Favicon-->
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -13,10 +13,12 @@
   <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#ffc40d">
   <meta name="theme-color" content="#ffffff">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <!-- Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <!-- Font Awesome-->
   <script src="https://kit.fontawesome.com/41707c0594.js" crossorigin="anonymous"></script>
   <!-- Bootstrap-->
@@ -36,15 +38,37 @@
             <button class="gnb-search-btn btn-outline-success" type="submit">검색</button>
           </form>
         </div>
-        <ul class="gnb-list">
-          <li class="gnb-item"><a href=""><i class="fa-solid fa-bookmark"></i></a></li>
-          <li class="gnb-item"><a href=""><i class="fa-solid fa-user"></i></a></li>
-          <li class="gnb-item"><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
-        </ul>
+        <div class="overlay">
+          <div class="login-box">
+            <img src="./images/KakaoTalk_20230726_124916611.png" alt="">
+            <form action="">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <input type="text" class="form-control" placeholder="아이디를 입력하세요." aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">PW</span>
+                <input type="text" class="form-control" placeholder="비밀번호를 입력하세요." aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <button type="button" class="btn btn-outline-primary">login</button>
+              <button type="button" class="close-btn btn btn-outline-danger">닫기</button>
+            </form>
+          </div>
+        </div>
+        <button type="button" class="open-btn"><i class="fa-solid fa-user"></i></button>
+      </div>
+        
+          <!-- Mobal Login  -->
+            <div class="gnb-list-login">
+              <ul class="gnb-list">
+                <li class="gnb-item"><a href=""><i class="fa-solid fa-bookmark"></i></a></li>
+                <li class="gnb-item"><a href=""><i class="fa-solid fa-user"></i></a></li>
+                <li class="gnb-item"><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
+              </ul>
+            </div>
+
       </nav>
     </header>
-
-
     <main>
       <section>
               <!-- 슬라이드 이미지, 텍스트-->
@@ -74,24 +98,26 @@
             </div>
         </div>
 
-          <!-- 플레이 아이콘 -->
-        <div class="play-list">
-          <div class="play-list-left">
+        <!-- 플레이 버튼 -->
+        <div class="play-list-btn">
+          <button id="slide-prev" type="button">
             <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <div class="play-list-pause">
+          </button>
+          <button id="slide-pause" type="button">
             <i class="fa-solid fa-pause"></i>
-          </div>
-          <div class="play-list-right">
+          </button>
+          <button id="slide-next" type="button">
             <i class="fa-solid fa-arrow-right"></i>
-          </div>
+          </button>
         </div>
-        <!-- 슬라이드 라인 -->
-        <div class="slide-line"></div>
 
+        </div>
+				<!-- 슬라이드 라인 -->
+        <div class="slide-line"></div>
       </section>
     </main>
   <script src="./script.js"></script>
+  <script src="./popup.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </body>
