@@ -127,6 +127,16 @@ header nav {
   border-radius: 10px;
 } 
 
+.slide-line {
+  position: absolute;
+  top: 79%;
+  left: 16%;
+  /* width 값 javascript 후 0으로 수정 */
+  width: 200px;
+  height: 5px;
+  background-color: #3d3d3d;
+}
+
 .play-list {
   position: absolute;
   top: 77%;
@@ -137,5 +147,8 @@ header nav {
   font-size: 20px;
 } 
 
+.play-list i {
+  cursor: pointer;
+}
 
 
