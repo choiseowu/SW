@@ -34,3 +34,26 @@ $('label').on('click', function(e){
     $('.agree').find('input[type="checkbox"]').removeAttr('checked');
   }
  })
+
+ // .agree label 안 checkbox가 모두 체크 상태라면 모두 동의 버튼도 체크로 변경
+ // 하나라도 체크되지 않은 값이 있다면 모두 동의 버튼 언체크 
+ $('.agree label').on('click', function(){
+  let len = $('.agree .checkbox-img').length;
+  let chklen = $('.agree .checked').length;
+  let unchk = len - chklen;
+  // console.log(len, chklen)
+
+  // 조건이 참이라면
+  // .total label .checkbox-img checked class add 
+  // .total label input checkbox checked true
+  // 조건이 참이 아니라면 
+  // .total label .checkbox-img checked class remove
+  // .total label checkbox checked remobeAttr
+  if(unchk == 0) {
+    $('.totla label .checkbox-img').addClass('checked');
+    $('.total label input[type="checkbox"]').attr('checked', true);
+  }else {
+    $('.totla label .checkbox-img').removeClass('checked');
+    $('.total label input[type="checkbox"]').removeAttr('checked');
+  }
+ })
