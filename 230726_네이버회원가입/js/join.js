@@ -165,3 +165,42 @@ $('#year, #month, #date').focusout(function(){
     $('.birth .warn').empty();
   }
 })
+
+
+// 성별 
+// .gender .inputbox를 클릭했을 때 
+// .gender 모든 .inputbox에 .btn-primary class remove 
+// .gender .inputbox안 모든 input radio에 checked false 
+// 클릭된 자신에게만 .btn-primary class add 
+// 클릭된 자신에게만 input radio에 checked true 
+// genderveri = true;
+$('.gender .inputbox').on('click', function(){
+  $('.gender .inputbox').removeClass('btn-primary');
+  // prop => jQuery에서 radio 버튼을 제어할 때 사용
+  $('.gender inputbox input[type="radio"]').prop('checked', false);
+  $(this).addClass('btn-primary');
+  $(this).children('input[type="radio"]').prop('checked', true);
+  genderveri = true; 
+})
+
+
+// 본인 확인 이메일
+// .usermail input에 focusout 됐을 때
+// 필수사항이 아니라 선택사항이니까 기본적으로 mailveri = true;
+// 사용자가 값을 입력하지 않았을 경우 그대로 유지
+// 값을 입력했는데 정규식에 맞지 않게 입력 => false
+// .usermail .warn '이메일 주소를 다시 확인해주세요.'
+$('.usermail input').focusout(function(){
+  let mail = $(this).val();
+  // 대소문자, 숫자로 시작 가능 @ 다음에 naver.com 까지 나와야함
+  let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  if(mail.length == 0) {
+    $('.usermail .warn').empty();
+  } else if(!mailExp.test(mail)) {
+    mailveri = false;
+    $('.usermail .warn').html('<span class="text-red">이메일 주소를 다시 확인해주세요.</span>')
+  } else {
+    $('.usermail .warn').empty();
+  }
+})
