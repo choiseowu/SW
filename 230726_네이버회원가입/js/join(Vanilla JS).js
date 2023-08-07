@@ -82,3 +82,20 @@ document.querySelector('.userpw-chk input').addEventListener('focusout', functio
     pwChkImg.src = './imges/m_icon_pw_step_02.png';
   }
 })
+
+
+// 이름 
+document.querySelector('.username input').addEventListener('focusout', function(){
+  let userName = this.value;
+  let nameExp = /^[가-힣]{2,5}$/;
+  let nameWarn = document.querySelector('.username .warn');
+
+  if(userName.length == 0) {
+    nameWarn.innerHTML = essnInfo;
+  } else if(!nameExp.test(userName)) {
+    nameWarn.innerHTML = '<span class="text-red">2~5글자 사이의 한글로 입력하세요.</span>'
+  } else {
+    nameveri = true;
+    nameWarn.innerHTML = '';
+  }
+})
