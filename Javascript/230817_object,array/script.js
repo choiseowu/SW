@@ -5,10 +5,31 @@ let products = [
     title : '에어 조던 1 미드 SE',
     price : '169,000 원',
     size : ['220', '225', '230', '235']
+  },
+  {
+    img : 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bdcce975-dafc-4d91-867e-5948439aafb4/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EC%97%98%EB%A6%AC%EB%B2%A0%EC%9D%B4%ED%8A%B8-%ED%95%98%EC%9D%B4-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-3eEjqE30.png',
+    title : '에어 조던 1 엘리베이트 하이',
+    price : '179,000 원',
+    size : ['220', '225', '230', '235']
+  },
+  {
+    img : 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4c3060c0-d367-4627-b054-5e9c52a9d7ce/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EC%97%98%EB%A6%AC%EB%B2%A0%EC%9D%B4%ED%8A%B8-%EB%A1%9C%EC%9A%B0-se-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-TADsPTsd.png',
+    title : '에어 조던 1 엘리베이트 로우 SE',
+    price : '169,000 원',
+    size : ['220', '225', '230', '235']
   }
 ]
 
-document.querySelector('.box-item img').src = products[0].img;
-document.querySelector('.sho-info h2').innerHTML = products[0].title;
-document.querySelectorAll('.sho-info p')[0].innerHTML = products[0].price;
-document.querySelectorAll('.sho-info p')[1].innerHTML = products[0].size;
+// document.querySelector('.box-item img').src = products[0].img;
+// document.querySelector('.sho-info h2').innerHTML = products[0].title;
+// document.querySelectorAll('.sho-info p')[0].innerHTML = products[0].price;
+// document.querySelectorAll('.sho-info p')[1].innerHTML = products[0].size;
+
+let boxItems = document.querySelectorAll('.box-item');
+
+boxItems.forEach(function(item, index){
+  item.querySelector('img').src = products[index].img;
+  item.querySelector('.sho-info h2').innerHTML = products[index].title;
+  item.querySelectorAll('.sho-info p')[0].innerHTML = products[index].price;
+  item.querySelectorAll('.sho-info p')[1].innerHTML = products[index].size;
+})
