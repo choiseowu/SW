@@ -17,6 +17,24 @@ let products = [
     title : '에어 조던 1 엘리베이트 로우 SE',
     price : '169,000 원',
     size : ['220', '225', '230', '235']
+  },
+  {
+    img : 'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/5e90af51-c6cd-4426-ad31-5f34ac7df0ee/%EC%9A%B0%EB%A8%BC%EC%8A%A4-%EC%A4%8C-%EB%B3%B4%EB%A9%94%EB%A1%9C-5-wolf-grey-and-black-fj5474-133-%EC%B6%9C%EC%8B%9C%EC%9D%BC.jpg',
+    title : '나이키 줌 보메로 5 프리미엄',
+    price : '219,000 원',
+    size : ['220', '225', '230', '235']
+  },
+  {
+    img : 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/983e28fc-5aa7-4558-90b1-98f50518ef2f/%EC%97%90%EC%96%B4-%EB%A6%AC%ED%94%84%ED%8A%B8-%EB%B8%8C%EB%A6%AC%EB%93%9C-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-cKtglYTr.png',
+    title : '나이키 에어 리프트 브리드',
+    price : '103,200 원',
+    size : ['220', '225', '230', '235']
+  },
+  {
+    img : 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/377c76b2-38e9-4728-9c98-61aff77543c8/%ED%8F%B0%ED%83%84%EC%B9%B4-%EC%99%80%ED%94%8C-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-HAwnuJaa.png',
+    title : '나이키 폰탄카 와플',
+    price : '77,300 원',
+    size : ['220', '225', '230', '235']
   }
 ]
 
@@ -84,6 +102,14 @@ products.forEach(function(item){
   let boxTitle = document.createElement('h2');
   boxTitle.innerHTML = item.title;
   shoInfo.appendChild(boxTitle);
+
+  let boxPrice = document.createElement('p');
+  boxPrice.innerHTML = item.price;
+  shoInfo.appendChild(boxPrice);
+
+  let boxSize = document.createElement('p');
+  boxSize.innerHTML = item.size;
+  shoInfo.appendChild(boxSize);
 })
 
 
