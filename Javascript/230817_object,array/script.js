@@ -121,3 +121,24 @@ let products = [
 // document.querySelector('.box-list').insertAdjacentHTML('beforeend', pTag);
 
 // insertAdjacentHTML로 .box-item 완성 
+let boxList = document.querySelector('.box-list');
+
+products.forEach(function(item, index){
+  let boxItem = `<div class="box-item"></div>`;
+  document.querySelector('.box-list').insertAdjacentHTML('beforeend', boxItem);
+
+  let boxImg = `<img src="${item.img}" alt="${item.title}">`
+  document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', boxImg);
+
+  let shoInfo = `<div class="sho-info"></div>`;
+  document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', shoInfo); 
+
+  let boxTitle = `<h2>${item.title}</h2>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxTitle); 
+
+  let boxPrice = `<p>${item.price}</p>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxPrice); 
+
+  let boxSize = `<p>${item.size}</p>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxSize); 
+})
