@@ -20,9 +20,9 @@ const app = express();
 // 콜백함수 안에 있는 코드 실행 
 // localhost:7000(port number)
 
-app.listen(7000, function(){
-  console.log('7000번 포트')
-})
+// app.listen(7000, function(){
+//   console.log('7000번 포트')
+// })
 
 
 // 서버 : 요청한 정보를 보내주는 프로그램 
@@ -41,3 +41,20 @@ app.listen(7000, function(){
 // Node.js 장단점
 // 장점 : 가벼운 요청부터 먼저 처리 
 // 단점 : 이미지, 동영상, 연산처리가 필요한 서비스를 개발해야 될 경우, 속도도 떨어지고, 라이브러리도 부족하다.
+
+app.listen(7000, function(){
+  console.log('7000번 포트')
+})
+
+// 서버에 GET 요청으로 정보 받아오기 
+// 유저가 localhost:7000으로 접속하면 send, sendFile() 안 내용을 보여준다.
+// app.get('경로', funtion(){})
+// requests (요청) , response (응답)
+// slash / 는 메인 경로 (localhost:7000)
+app.get('/', function(requests, response){
+  response.sendFile(__dirname + '/index.html');
+})
+
+app.get('/test', function(requests, response){
+  response.send('Test 페이지 입니다.')
+})
