@@ -81,3 +81,9 @@ app.get('/login', function(requests, response){
 app.get('/map', function(requests, response){
   response.sendFile(__dirname + '/map.html');
 })
+
+// localhost:7000/map 으로 접속시 보여줄 화면 => map.html
+// map.html : 카카오 지도 OPEN API
+app.get('/map', function(requests, response){
+  response.sendFile(__dirname + '/map.html')
+})
