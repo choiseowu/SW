@@ -76,9 +76,9 @@ app.get('/test', function(requests, response){
 // y => enter 
 
 // /login 경로로 접속 했을 때 login.html 파일이 보이게 작성 
-app.get('/login', function(requests, response){
-  response.sendFile(__dirname + '/login.html');
-})
+// app.get('/login', function(requests, response){
+//   response.sendFile(__dirname + '/login.html');
+// })
 
 // /map 경로로 접속 했을 때 map.html 파일
 app.get('/map', function(requests, response){
@@ -264,3 +264,21 @@ app.put('/edit', function(requests, response){
 app.get('/join', function(requests, response){
   response.render('join.ejs')
 })
+
+app.post('/join', function(requests, response){
+  db.collection('total').findOne({ name : 'dataLength'}, function(error, result){
+    console.log(result.totalData)
+    let totalDataLength = result.totalData;
+
+    db.collection('login').insertOne({_id : totalDataLength + 1, name : requests.body.name, id: requests.body.id, pw : requests.body.pw}, function(error, result){
+      console.log('login 저장완료')
+    })
+
+    db.collection('total').updateOne({name : 'dataLength'}, {$inc : {totalData : 1}}, function(error, result){
+      if(error) {
+        return console.log(error)
+      }
+      response.redirect('/login')
+    })
+  })
+})  
