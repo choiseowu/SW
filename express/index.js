@@ -361,3 +361,11 @@ passport.use(new LocalStrategy({
 passport.serializeUser(function(user, done){
   done(null, user.id)
 })
+
+
+// 해당 세션 데이터를 login collection에서 찾는다
+passport.deserializeUser(function(id, done){
+  db.collection('login').findOne({id : id}, function(error, result){
+    done(null, result)
+  })
+})
