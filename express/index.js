@@ -249,3 +249,18 @@ app.put('/edit', function(requests, response){
     response.redirect('/add')
   })
 })
+
+
+// 서버에 GET, POST, PUT, DELETE 요청하는 방법
+// CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
+// insert, find, update, delete 
+// insertOne, findOne, updateOne, deleteOne
+
+
+// Login 기능 구현
+// 1. view 폴더 안 join.ejs 파일 생성
+// 2. 회원가입 폼 작성
+// 3. db.collection('login')에 join.ejs 파일에 있는 input value값 저장 
+app.get('/join', function(requests, response){
+  response.render('join.ejs')
+})
