@@ -41,13 +41,30 @@ function updateData(){
                 latestData = item;
                 console.log(latestData)
                 
-                let dataItem = document.createElement('div');
-                // dataItem.innerHTML = item.cityName + '미세먼지 : ' + item.pm10Value;
-                dataItem.innerHTML = item.cityName + '미세먼지 : ' + latestData.pm10Value + latestData.dataTime;
-                dataDisplay.appendChild(dataItem);
+                // let dataItem = document.createElement('div');
+                // // dataItem.innerHTML = item.cityName + '미세먼지 : ' + item.pm10Value;
+                // dataItem.innerHTML = item.cityName + '미세먼지 : ' + latestData.pm10Value + latestData.dataTime;
+                // dataDisplay.appendChild(dataItem);
+
+                let dataItem = `
+                <div class="dust-item">
+                  <div>${latestData.sidoName}</div>
+                  <div>${latestData.cityName}</div>
+                  <div>${latestData.pm10Value}</div>
+                </div>
+              `
+              dataDisplay.insertAdjacentHTML('beforeend', dataItem);
+
+              let dustItem = document.querySelector('.dust-item');
+              if(item.pm10Value >= 20) {
+               dustItem.classList.add('not-good');
+              } else {
+               dustItem.classList.add('good');
               }
             }
           }
+        }
+
         } else {
           console.log('데이터 구조 다시 확인바람')
         }
