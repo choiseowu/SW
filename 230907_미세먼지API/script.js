@@ -22,6 +22,8 @@ function updateData(){
         // responsData에서 원하는 데이터만 추출해서 html 표기
         if(responsData.response.body.items) {
           let items = responsData.response.body.items;
+
+          // 데이터를 담을 html 요소 (div)
           let dataDisplay = document.getElementById('data');
           // 가장 최근 데이터를 저장 할 변수
           // 의도적으로 해당 변수에 아무런 데이터가 할당되지 않았음을 나타내기 위해 null
@@ -30,12 +32,18 @@ function updateData(){
             let item = items[i];
 
             if(item.cityName == '유성구') {
-              // dataTime 가장 최근 데이터 가져오기
-              // 
+             // cityName이 '경주시'인 것 중에 dataTime 가장 최근 데이터 가져오기
+              // latestData 값이 비어 있을 경우 = True
+              // item.dataTime 값이 latestData.dataTime값보다 클 경우
+              // latestData에 값이 없다 || latestData가 최근값이 아니다 = 참
               if(!latestData || item.dataTime > latestData.dataTime) {
-                latestData = item.dataTime;
+                // latestData에 더 큰 값을 넣어서 latestData에 제일 최근 데이터를 담는다.
+                latestData = item;
+                console.log(latestData)
+                
                 let dataItem = document.createElement('div');
-                dataItem.innerHTML = item.cityName + '미세먼지 : ' + item.pm10Value;
+                // dataItem.innerHTML = item.cityName + '미세먼지 : ' + item.pm10Value;
+                dataItem.innerHTML = item.cityName + '미세먼지 : ' + latestData.pm10Value + latestData.dataTime;
                 dataDisplay.appendChild(dataItem);
               }
             }
@@ -50,5 +58,8 @@ function updateData(){
   };
   xhr.send('');
 }
-
+// 처음에 한 번 함수 호출로 실행 
 updateData();
+
+// updatate 함수를 3600000(1시간)마다 실행
+setInterval(updateData, 3600000)
