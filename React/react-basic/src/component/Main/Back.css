@@ -1,0 +1,33 @@
+.background {
+  height: 600px;
+  background-image: url(../back.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.front-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  color: #fff;
+  text-align: center;
+}
+
+.top {
+  margin-top: -100px;
+}
+
+.second-txt {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 5px 5px 5px #666;
+}
+
