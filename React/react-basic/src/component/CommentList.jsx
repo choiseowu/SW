@@ -22,6 +22,14 @@ const CommentList = () => {
   let [name, setName] = useState('');
   let [text, setText] = useState('');
 
+  let deleteComment = (index) => {
+    let newList = [...list];
+    // slice(배열 변경 할 인덱스 값, 제거할 요소의 수)
+    newList.splice(index, 1);
+    setList(newList)
+    console.log(index)
+  }
+
 // value값이 빈 값이라면 삼항연산자로 list가 추가되지 않고 alert창 띄우기
   let addComment = () => {
     name === '' || text === '' ? alert('이름과 글을 입력하세요') : (
@@ -46,7 +54,7 @@ const CommentList = () => {
         list.map((item, i) => {
           return (
             // 자식 Comment component에 name,text이름으로 값 전달
-            <Comment name={item.name} text={item.content} key={i}/>
+            <Comment name={item.name} text={item.content} key={i} delete={() => deleteComment(i)}/>
           )
         })
       }
